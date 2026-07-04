@@ -1,0 +1,332 @@
+/* ==========================================================
+   NSI Dashboard Theme
+   Author : Saumyen Kundu
+   ========================================================== */
+
+/* ----------------------------------------------------------
+   General
+   ---------------------------------------------------------- */
+
+body{
+
+    background:#f4f6f9;
+
+    font-family: "Segoe UI", Arial, sans-serif;
+
+}
+
+
+/* ----------------------------------------------------------
+   Dashboard title
+   ---------------------------------------------------------- */
+
+h1{
+
+    color:#003366;
+
+    font-weight:500;
+
+}
+
+h2,h3,h4,h5{
+
+    font-weight:400;
+
+}
+
+
+/* ----------------------------------------------------------
+   Cards
+   ---------------------------------------------------------- */
+
+.card{
+
+    border-radius:10px;
+
+    border:none;
+
+    box-shadow:0px 3px 10px rgba(0,0,0,0.15);
+
+    margin-bottom:20px;
+
+}
+
+
+/* ----------------------------------------------------------
+   Card headers
+   ---------------------------------------------------------- */
+
+.card-header{
+
+    background:#005A9C;
+
+    color:white;
+
+    font-weight:bold;
+
+    font-size:18px;
+
+    padding-top:10px;
+
+    padding-bottom:10px;
+
+/*    border-top-left-radius: 16px !important;
+    border-top-right-radius: 16px !important;*/
+
+}
+
+
+/* ----------------------------------------------------------
+   Card body
+   ---------------------------------------------------------- */
+
+.card-body{
+
+    background:white;
+
+}
+
+
+/* ----------------------------------------------------------
+   Dropdowns
+   ---------------------------------------------------------- */
+
+.Select-control{
+
+    border-radius:6px;
+
+}
+
+.Select-menu-outer{
+
+    z-index:9999;
+
+}
+
+/*.dash-dropdown button {
+    border-radius: 10px;
+}*/
+
+/* ----------------------------------------------------------
+   Labels
+   ---------------------------------------------------------- */
+
+label{
+
+    font-weight:600;
+
+    color:#003366;
+
+}
+
+
+/* ----------------------------------------------------------
+   Buttons
+   ---------------------------------------------------------- */
+
+.btn{
+
+    border-radius:6px;
+
+    font-weight:600;
+
+}
+
+.btn-primary{
+
+    background:#005A9C;
+
+    border-color:#005A9C;
+
+}
+
+.btn-primary:hover{
+
+    background:#00467a;
+
+}
+
+
+/* ----------------------------------------------------------
+   Bootstrap Switches
+   ---------------------------------------------------------- */
+
+.form-check{
+
+    margin-right:12px;
+
+}
+
+.form-check-label{
+
+    font-size:14px;
+
+}
+
+/*.form-select {
+    border-radius: 10px;
+}*/
+
+/* ----------------------------------------------------------
+   Plotly graphs
+   ---------------------------------------------------------- */
+
+.js-plotly-plot{
+
+    border-radius:8px;
+
+}
+
+
+/* ----------------------------------------------------------
+   Summary
+   ---------------------------------------------------------- */
+
+.alert{
+
+    border-radius:8px;
+
+    font-weight:600;
+
+}
+
+
+/* ----------------------------------------------------------
+   Footer
+   ---------------------------------------------------------- */
+
+.footer{
+
+    color:#666666;
+
+    font-size:13px;
+
+    text-align:center;
+
+    padding-top:15px;
+
+}
+
+
+/* ----------------------------------------------------------
+   Scrollbar
+   ---------------------------------------------------------- */
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#ececec;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#b0b0b0;
+
+    border-radius:10px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:#808080;
+
+}
+
+/* Plot containers */
+
+.dash-graph{
+
+    background:white;
+
+    border-radius:8px;
+
+}
+
+/* Toolbar */
+
+.toolbar{
+
+    display:flex;
+
+    justify-content:flex-end;
+
+    align-items:center;
+
+    gap:15px;
+
+}
+
+/* Card titles */
+
+.card-header h5{
+
+    margin:0;
+
+    font-weight:700;
+
+}
+
+/* Reduce spacing between header and graph */
+
+.card-body{
+
+    padding-top:10px;
+
+}
+
+.toolbar .form-check-label {
+
+    color: white !important;
+
+}
+
+.form-check label {
+
+    color: white !important;
+
+}
+
+/* Switch background when ON */
+.form-check-input:checked {
+
+    background-color: #6c757d;
+
+    border-color: #005A9C;
+
+}
+
+/* Switch border when OFF */
+.form-check-input {
+
+    border-color: #6c757d;
+
+}
+
+/* Focus ring */
+.form-check-input:focus {
+
+    border-color: #005A9C;
+
+    box-shadow: 0 0 0 0.2rem rgba(0,90,156,0.25);
+
+}
+
+
+.css-1uccc91-singleValue {
+
+    color: black !important;
+
+}
+
+.Select-value-label {
+
+    color: black !important;
+
+}
+
