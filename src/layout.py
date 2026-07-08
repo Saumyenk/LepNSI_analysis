@@ -86,14 +86,27 @@ def plot_tools_title(name, default_value):
         id=f"{name}-axis",
         options=[
             {"label":"Log X","value":"logx"},
-            {"label":"Log Y","value":"logy"},
-            {"label":"Grid","value":"grid"}
+            {"label":"Log Y","value":"logy"}#,
+            # {"label":"Grid","value":"grid"}
         ],
         className="toolbar",
         value=default_value,
         inline=True,
         switch=True
     )
+# def scenario_checklist(name, default_value):
+#     return dbc.Checklist(
+#         id=f"{name}-axis",
+#         options=[
+#             {"label":"Unpol","value":"logx"},
+#             {"label":"Op. pol","value":"logy"}#,
+#             {"label":"H20","value":"grid"}
+#         ],
+#         className="toolbar",
+#         value=default_value,
+#         inline=True,
+#         # switch=True
+#     )
 
 
 def create_layout():
@@ -161,13 +174,12 @@ def create_layout():
             style={"backgroundColor": "#0B3C5D", "color": "white"}
             # style={"backgroundColor": "rgba(50, 120, 150, 1)", "color": "white"}
 
-
         ),
 
         # html.Br(),
 
         #######################################################
-        # Controls
+        # Controls (Dropdowns)
         #######################################################
 
         dbc.Card(
@@ -204,11 +216,63 @@ def create_layout():
 
                         ],
 
-                        md=3
+                        md=2
 
                     ),
 
-                    dbc.Col(md=3),
+                    dbc.Col(
+
+                        [
+
+                        html.Label("Z' Width"),
+
+                        dcc.Dropdown(
+
+                            id="width",
+
+                            options=[
+                                {"label": "10% of Mass", "value": "W10M"},
+                                {"label": "30% of Mass", "value": "W30M"},
+                            ],
+
+                            value="W10M",
+
+                            clearable=False
+
+                        )
+
+                        ],
+
+                        md=2
+
+                    ),
+
+
+                    dbc.Col(
+
+                        [
+
+                        html.Label("Polarisation (e⁻,e⁺)"),
+
+                        dcc.Dropdown(
+
+                            id="polarization",
+
+                            options=[],
+
+                            value="0",
+
+                            clearable=False
+
+                        )
+
+                        ],
+
+                        md=2
+
+                    ),
+
+                    dbc.Col(),
 
                     dbc.Col(
 
@@ -242,7 +306,7 @@ def create_layout():
 
                         ],
 
-                        md=3
+                        md=2
 
                     ),
 
@@ -256,19 +320,7 @@ def create_layout():
 
                             id="mass",
 
-                            options=[
-
-                                {"label":"10","value":10},
-                                {"label":"50","value":50},
-                                {"label":"100","value":100},
-                                {"label":"200","value":200},
-                                {"label":"500","value":500},
-                                {"label":"1000","value":1000},
-                                {"label":"2000","value":2000},
-                                {"label":"5000","value":5000},
-                                {"label":"10000","value":10000}
-
-                            ],
+                            options=[],
 
                             value=500,
 
@@ -278,7 +330,7 @@ def create_layout():
 
                         ],
 
-                        md=3
+                        md=2
 
                     )
 
@@ -383,7 +435,7 @@ def create_layout():
                                         dbc.Col(
                                             plot_tools_title("hist", ["logy", "grid"]),
                                             width=8,
-                                            style={"textAlign": "right", "color": "white"}
+                                            style={"textAlign": "right"}
                                         )
                                     ],
                                     align="center"
@@ -474,22 +526,56 @@ def create_layout():
 
                                 # [plot_toolbar("limit",["logx","logy","grid"]),
 
-                                dcc.Graph(
+                                [
 
-                                    id="limit-plot",
+                                    dbc.Row(
+                                        [
+                                            dbc.Col(
+                                                dcc.Checklist(
+                                                    id="limit-scenarios",
+                                                    options=[],
+                                                    value=["H20"],
+                                                    inline=True,
+                                                    inputStyle={"margin-right":"5px",
+                                                                "margin-left":"12px"}
+                                                ),
+                                            ),
+                                            dbc.Col(
+                                                dbc.Switch(
+                                                    id="limit-systematics",
+                                                    label="Systematics",
+                                                    value=True,
+                                                    style={'width': '50%', 'paddingLeft': '80px', 'borderLeft': '2px solid #ccc'},
+                                                ),
+                                                width=7
+                                            ),
+
+                                        ]
+
+                                    ),
                                     
-                                    mathjax=True,
 
-                                    config={
-#                                        "displaylogo": False,
-#                                        "displayModeBar": False,
-                                        "responsive": True
-                                    },
+
+                                    dcc.Graph(
+
+                                        id="limit-plot",
                                     
-                                    style={"height": "100%",
-                                           "width": "100%"},
+                                        mathjax=True,
 
-                                ),#],
+                                        config={
+#                                            "displaylogo": False,
+#                                            "displayModeBar": False,
+                                            "responsive": True
+                                        },
+                                    
+                                        style={"height": "80%",
+                                               "width": "100%"},
+
+                                    ),
+
+
+                                
+                                ],
                                 
                                 style={"height": "570px"}
 

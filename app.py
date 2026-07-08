@@ -21,7 +21,7 @@ from src.callbacks import register_callbacks
 app = Dash(
     __name__,
     external_stylesheets=[
-        dbc.themes.ZEPHYR
+        dbc.themes.MORPH
     ],
     suppress_callback_exceptions=True
 )

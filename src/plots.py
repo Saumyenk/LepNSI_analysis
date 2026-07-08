@@ -48,14 +48,14 @@ def load_histogram(rootfile, process, observable):
 # Histogram Figure
 # ------------------------------------------------------------
 
-def histogram_figure(rootfile, observable,
+def histogram_figure(rootfile, mass, observable,
                      logx=False, logy=True, grid=True):
 
     processes = [
-        ("Signal", "red"),
+        (f"Signal/M{mass}", "red"),
         ("NuNu", "royalblue"),
         ("Bhabha", "forestgreen"),
-        ("Full", "black")
+        (f"Full/M{mass}", "black")
     ]
 
     titles = {
@@ -130,7 +130,7 @@ def histogram_figure(rootfile, observable,
         hovermode="x unified",
 
         legend=dict(
-            x=0.85,
+            x=0.75,
             y=0.98,
             bgcolor="rgba(255,255,255,0.7)", font_size=19
         ),
@@ -175,6 +175,8 @@ def read_limit_file(filename):
         names=[
 
             "Mass",
+            "Unpol_0",
+            "Unpol_1",
             "Opt_0",
             "Opt_1",
             "H20_0",
@@ -189,55 +191,81 @@ def read_limit_file(filename):
 # Limit Plot
 # ------------------------------------------------------------
 
-def limit_plot(filename1, filename2, scenario="H20_1",
+def limit_plot(filename1, filename2, scenarios, systematic=True,
                logx=True, logy=True, grid=True):
 
     df1 = read_limit_file(filename1)
     df2 = read_limit_file(filename2)
+    # df1 = df1.dropna(subset=[scenario]) # removes NaNs
+    # df2 = df2.dropna(subset=[scenario]) # removes NaNs
+
+    columns = {
+        "Unpol": {
+            True: "Unpol_1",
+            False: "Unpol_0"
+        },
+        "Opt": {
+            True: "Opt_1",
+            False: "Opt_0"
+        },
+        "H20": {
+            True: "H20_1",
+            False: "H20_0"
+        }
+    }
 
 
     fig = go.Figure()
 
-    fig.add_trace(
+    for scenario in scenarios:
 
-        go.Scatter(
+        column = columns[scenario][systematic]
+        df1 = df1.dropna(subset=[column]) # removes NaNs
+        df2 = df2.dropna(subset=[column]) # removes NaNs
 
-            x=df1["Mass"],
 
-            y=df1[scenario]/(2*np.sqrt(2)*GF*df1["Mass"]*df1["Mass"]),
+        fig.add_trace(
 
-            mode="lines+markers",
+            go.Scatter(
 
-            # name=f"ILC ({scenario})",
-            name=f"w/o Intf",
+                x=df1["Mass"],
 
-            line=dict(width=3),
+                y=df1[column]/(2*np.sqrt(2)*GF*df1["Mass"]*df1["Mass"]),
 
-            marker=dict(size=7)
+                mode="lines+markers",
+
+                # name=f"ILC ({scenario})",
+                name=f"w/o Intf",
+
+                line=dict(width=3),
+
+                marker=dict(size=7)
+
+            )
+
+        )
+        fig.add_trace(
+
+            go.Scatter(
+
+                x=df2["Mass"],
+
+                y=df2[column]/(2*np.sqrt(2)*GF*df2["Mass"]*df2["Mass"]),
+
+                mode="lines+markers",
+
+                # name=f"ILC ({scenario})",
+                name=f"w/ Intf",
+
+                line=dict(width=3),
+
+                marker=dict(size=7)
+
+            )
 
         )
 
-    )
-    fig.add_trace(
 
-        go.Scatter(
-
-            x=df2["Mass"],
-
-            y=df2[scenario]/(2*np.sqrt(2)*GF*df2["Mass"]*df2["Mass"]),
-
-            mode="lines+markers",
-
-            # name=f"ILC ({scenario})",
-            name=f"w/ Intf",
-
-            line=dict(width=3),
-
-            marker=dict(size=7)
-
-        )
-
-    )
 
     fig.update_layout(
 
@@ -317,7 +345,7 @@ def read_xsec_file(filename):
 # Xsection Plot
 # ------------------------------------------------------------
 
-def xsec_plot(filename1, filename2, scenario="xsec",
+def xsec_plot(filename1, filename2, nunu_xsec, scenario="xsec",
               logx=True, logy=False, grid=True):
 
     df1 = read_xsec_file(filename1)
@@ -346,7 +374,10 @@ def xsec_plot(filename1, filename2, scenario="xsec",
 
     )
 # w/o interference
-    nunu_xsec = 6246.3295
+    # nunu_xsec = 6246.3295
+    # print(df2.dtypes)
+    # print(df2.head())
+    # print(df2[scenario])
     fig.add_trace(
 
         go.Scatter(
