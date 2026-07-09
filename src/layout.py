@@ -3,7 +3,7 @@
 
 layout.py
 
-Stage-1 Monophoton Dashboard
+Stage-2 Monophoton Dashboard
 
 ============================================================
 """

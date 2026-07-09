@@ -191,7 +191,7 @@ def read_limit_file(filename):
 # Limit Plot
 # ------------------------------------------------------------
 
-def limit_plot(filename1, filename2, scenarios, systematic=True,
+def limit_plot(filename1, filename2, scenarios=["Unpol","Opt","H20"], systematic=True,
                logx=True, logy=True, grid=True):
 
     df1 = read_limit_file(filename1)

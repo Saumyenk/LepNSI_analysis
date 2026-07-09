@@ -1,0 +1,13 @@
+# --- Python ---
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# --- Old datafiles ---
+output/
+FCC/
+Limit/
+*_old.dat
+

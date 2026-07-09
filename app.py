@@ -1,7 +1,7 @@
 """
 ===========================================================
  Monophoton Analysis Dashboard
- Stage-1
+ Stage-2
  Author : Saumyen Kundu
 ===========================================================
 """
@@ -13,20 +13,17 @@ from src.layout import create_layout
 from src.callbacks import register_callbacks
 
 
-
 # ----------------------------------------------------
 # Create App
 # ----------------------------------------------------
 
 app = Dash(
     __name__,
-    external_stylesheets=[
-        dbc.themes.MORPH
-    ],
+    external_stylesheets=[dbc.themes.MORPH],
     suppress_callback_exceptions=True
 )
 
-# server = app.server
+server = app.server
 
 # ----------------------------------------------------
 # Layout
@@ -40,6 +37,7 @@ app.layout = create_layout()
 
 register_callbacks(app)
 
+
 # ----------------------------------------------------
 # Run Server
 # ----------------------------------------------------
@@ -47,9 +45,9 @@ register_callbacks(app)
 if __name__ == "__main__":
 
     app.run(
-#        host="0.0.0.0",
+        host="0.0.0.0",
         port=8050,
-#        debug=False,
-#        dev_tools_hot_reload=False    
-        debug=True
+        debug=False,
+        dev_tools_hot_reload=False    
+        # debug=True
         )
