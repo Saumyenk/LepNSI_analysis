@@ -310,6 +310,4 @@ GitHub: <https://github.com/Saumyenk>
 
 ### License
 
-Specify the preferred license, for example
-
-Apache License v2.0
+This project is distributed under the Apache License 2.0. See the LICENSE file for details.
