@@ -1,12 +1,10 @@
-# LepNSI_analysis
-
-# Neutrino Leptonic NSI Dashboard
+# Neutrino Leptonic NSI Analysis Dashboard
 
 An interactive dashboard for studying the sensitivity of future electron-positron colliders to **Leptonic Non-Standard Neutrino Interactions (NSI)** through the monophoton process
 
-\[
+$$
 e^-e^+ \rightarrow \gamma + E_T^{\rm miss}.
-\]
+$$
 
 The dashboard provides interactive visualization of
 
@@ -22,7 +20,7 @@ The application is written in **Python** using **Dash**, **Plotly**, **Pandas**,
 
 ---
 
-# Features
+## Features
 
 - Interactive histogram viewer
 - Interactive cross-section plots
@@ -43,7 +41,7 @@ The application is written in **Python** using **Dash**, **Plotly**, **Pandas**,
     - Responsive web interface
 ---
 
-# Repository Structure
+## Repository Structure
 
 ```
 NSI_Dashboard/
@@ -73,7 +71,7 @@ NSI_Dashboard/
 
 ---
 
-# Installation
+## Installation
 
 Create a Python environment
 
@@ -101,7 +99,7 @@ pip install -r requirements.txt
 
 ---
 
-# Dependencies
+## Dependencies
 
 Python packages
 
@@ -125,7 +123,7 @@ Optional
 
 ---
 
-# Running the Dashboard
+## Running the Dashboard
 
 From the project directory
 
@@ -143,11 +141,11 @@ Open this address using any modern browser.
 
 ---
 
-# Using the Dashboard
+## Using the Dashboard
 
 The dashboard consists of four main panels.
 
-## Input Controls
+### Input Controls
 
 Users can choose
 
@@ -161,7 +159,7 @@ depending on the collider selected.
 
 ---
 
-## Histogram
+### Histogram
 
 Displays normalized distributions of
 
@@ -183,7 +181,7 @@ The toolbar allows
 
 ---
 
-## Cross Section
+### Cross Section
 
 Displays
 
@@ -200,7 +198,7 @@ Shows
 
 ---
 
-## NSI Sensitivity
+### NSI Sensitivity
 
 Displays the projected
 
@@ -220,7 +218,7 @@ The user can choose
 
 ---
 
-# Data Generation
+## Data Generation
 
 The dashboard does **not** perform event simulation.
 
@@ -267,7 +265,7 @@ ILC/
 
 ---
 
-# ROOT Histogram Format
+## ROOT Histogram Format
 
 The dashboard expects
 
@@ -299,7 +297,7 @@ Full/
 
 ---
 
-# Limit File Format
+## Limit File Format
 
 Whitespace separated
 
@@ -320,7 +318,7 @@ where
 
 ---
 
-# Cross Section File Format
+## Cross Section File Format
 
 Whitespace separated
 
@@ -333,7 +331,7 @@ XError
 
 ---
 
-# Supported Colliders
+## Supported Colliders
 
 Currently implemented
 
@@ -352,7 +350,7 @@ through the `COLLIDER_INFO` configuration.
 
 ---
 
-# Deployment
+## Deployment
 
 The dashboard can be deployed using
 
@@ -374,18 +372,18 @@ Replace this with the hosted URL after deployment.
 
 ---
 
-# Adding New Colliders
+## Adding New Colliders
 
 Only the following need updating
 
-- `COLLIDER_INFO`
+- `COLLIDER_INFO`       
 - output data files
 
 No changes are required in the plotting functions.
 
 ---
 
-# Future Improvements
+## Future Improvements
 
 Planned features include
 
@@ -400,7 +398,7 @@ Planned features include
 
 ---
 
-# Citation
+## Citation
 
 If this dashboard contributes to your research, please cite the associated publication.
 
@@ -408,7 +406,7 @@ If this dashboard contributes to your research, please cite the associated publi
 
 ---
 
-# Author
+## Author
 
 **Saumyen Kundu**
 
