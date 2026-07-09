@@ -192,13 +192,7 @@ Shows
 
 Displays the projected
 
-3σ sensitivity
-
-for
-
-$$
-|\epsilon_{\alpha\beta}^{ee}|
-$$
+3σ sensitivity for  *$|\epsilon_{\alpha\beta}^{ee}|$*
 
 The user can choose
 
