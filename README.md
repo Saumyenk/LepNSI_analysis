@@ -10,7 +10,7 @@ The dashboard provides interactive visualization of
 
 - Signal and background kinematic distributions
 - Cross-section as a function of mediator mass
-- NSI sensitivity (3$\sigma$ limits)
+- NSI sensitivity (3σ limits)
 - Collider comparison
 - Beam polarization comparison
 - Different operating scenarios
@@ -56,7 +56,7 @@ NSI_Dashboard/
 │   ├── CLIC/
 │   └── FCC/
 │
-├── src                     
+├── src/                     
 │   ├── callbacks.py         # Dash callbacks
 |   ├── layout.py            # Dashboard layout
 |   └── plots.py             # Plot generation
@@ -72,7 +72,17 @@ NSI_Dashboard/
 
 ## Installation
 
-Create a Python3 environment with the following dependencies
+Clone the repository
+
+```bash
+git clone https://github.com/<username>/NSI_Dashboard.git
+cd NSI_Dashboard
+```
+
+Create or activate a Python 3 environment (optional, but recommended), and install the required dependencies.
+
+Required Python packages
+
 - dash
 - dash-bootstrap-components
 - plotly
@@ -80,7 +90,7 @@ Create a Python3 environment with the following dependencies
 - numpy
 - uproot
 
-Install the required packages
+Install them individually
 
 ```bash
 pip install dash
@@ -90,7 +100,8 @@ pip install pandas
 pip install numpy
 pip install uproot
 ```
-or
+
+or simply install all dependencies using
 
 ```bash
 pip install -r requirements.txt
@@ -100,7 +111,7 @@ pip install -r requirements.txt
 
 ## Running the Dashboard
 
-From the project directory
+From the project directory launch the dashboard 
 
 ```bash
 python app.py
@@ -199,15 +210,13 @@ The user can choose
 
 ## Data Generation
 
-The dashboard does **not** perform event simulation.
+The dashboard does **NOT** perform event simulation. All input data are generated *externally*. 
 
-All input data are generated externally. Please look at the repository at
+The simulation and analysis framework used to generate the dashboard input files is available in the companion repository:
 
+**NSI_SimAna**
+*<https://github.com/Saumyenk/NSI_SimAna>*
 
-
-```
-https://github.com/Saumyenk/NSI_SimAna
-```
 
 ---
 
