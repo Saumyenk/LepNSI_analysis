@@ -374,10 +374,6 @@ def xsec_plot(filename1, filename2, nunu_xsec, scenario="xsec",
 
     )
 # w/o interference
-    # nunu_xsec = 6246.3295
-    # print(df2.dtypes)
-    # print(df2.head())
-    # print(df2[scenario])
     fig.add_trace(
 
         go.Scatter(

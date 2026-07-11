@@ -43,30 +43,8 @@ The application is written in **Python** using **Dash**, **Plotly**, **Pandas**,
 
 ## Repository Structure
 
-```
-NSI_Dashboard/
+![NSI Dashboard Project Structure](screenshots/repo_structure.png)
 
-│
-├── assets/
-│   ├── style.css            # Custom CSS
-│   └── logos/
-│
-├── output/                  # Datasets
-│   ├── ILC/
-│   ├── CLIC/
-│   └── FCC/
-│
-├── src/                     
-│   ├── callbacks.py         # Dash callbacks
-|   ├── layout.py            # Dashboard layout
-|   └── plots.py             # Plot generation
-|
-├── app.py                   # Main Dash application
-|
-├── requirements.txt 
-├── LICENSE 
-└── README.md
-```
 
 ---
 
@@ -117,16 +95,15 @@ From the project directory launch the dashboard
 python app.py
 ```
 
-The dashboard can be started by running the command in the terminal
+The dashboard will be available at
+```
+http://127.0.0.1:8050
+```
+
+To access it from another device on the same network, open
 
 ```
-firefox "http://$(ip route get 1.2.3.4 | awk '{print $7}'):8050"
-```
-
-or, open this address using any modern browser (replace *your-ip-address* with your IP address).
-
-```
-http://your-ip-address:8050
+http://<your-ip-address>:8050
 ```
 
 ---

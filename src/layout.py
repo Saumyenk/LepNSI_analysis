@@ -156,7 +156,7 @@ def create_layout():
             dbc.Col(
                 [
                     html.Img(
-                        src="/assets/HRI_logo.png",
+                        src="/assets/logos/HRI_logo.png",
                         style={
                             "height": "90px",
                             "float": "right",
